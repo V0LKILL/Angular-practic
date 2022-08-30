@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CurrencyExchangeRateService} from "../../../http/currency-exchange-rate/currency-exchange-rate.service";
+import {CurrencyRateInterface} from "../../../interfaces/currency-rate-interface.interface";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public currencyRates: CurrencyRateInterface[] = [];
 
-  ngOnInit(): void {
+  constructor(private currencyExchangeRateService: CurrencyExchangeRateService) { }
+
+  public ngOnInit(): void {
+    this.currencyExchangeRateService.getRates()
+      .subscribe((response: CurrencyRateInterface[]) => {
+        this.currencyRates = response;
+      })
+
   }
 
 }

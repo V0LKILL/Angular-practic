@@ -1,7 +1,22 @@
 <header>
-  <ul>
-    <li><a [routerLink]="['']">Main</a></li>
-    <li><a [routerLink]="['cards']">Cards</a></li>
-    <li><a [routerLink]="['deposits']">Deposits</a></li>
-  </ul>
+  <div class="header-wrapper">
+    <div class="navigation">
+      <div class="logo-wrapper">
+        <a class="logoUrl" [routerLink]="['']">
+          <img class="logo" src="logo.svg" />
+        </a>
+      </div>
+      <ul class="links">
+        <li><a [routerLink]="['']">Главная</a></li>
+        <li><a [routerLink]="['cards']">Карты</a></li>
+        <li><a [routerLink]="['deposits']">Депозиты</a></li>
+      </ul>
+    </div>
+    <section class="rate-container">
+      <ul>
+        <li *ngFor="let item of currencyRates">{{item.buy | number: '1.2-2'}} - {{item.sale | number: '1.2-2'}}</li>
+      </ul>
+    </section>
+    <button class="auth">ABank24 WEB</button>
+  </div>
 </header>
