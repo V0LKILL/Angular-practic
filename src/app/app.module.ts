@@ -13,6 +13,10 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {CurrencyExchangeRateService} from "./http/currency-exchange-rate/currency-exchange-rate.service";
+import { BusinessComponent} from "./pages/business/business.component";
+import { ServicesComponent } from './pages/services/services.component';
+import { AboutTheBankComponent } from './pages/about-the-bank/about-the-bank.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -26,6 +30,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     DepositsComponent,
     HeaderComponent,
     FooterComponent,
+    BusinessComponent,
+    ServicesComponent,
+    AboutTheBankComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,20 +3,26 @@
     <div class="navigation">
       <div class="logo-wrapper">
         <a class="logoUrl" [routerLink]="['']">
-          <img class="logo" src="logo.svg" />
+          <img class="logo" src="favicon.ico" />
         </a>
       </div>
       <ul class="links">
-        <li><a [routerLink]="['']">Главная</a></li>
-        <li><a [routerLink]="['cards']">Карты</a></li>
-        <li><a [routerLink]="['deposits']">Депозиты</a></li>
+        <li><a [routerLink]="['']">{{"main" | translate}}</a></li>
+        <li><a [routerLink]="['cards']">{{"cards" | translate}}</a></li>
+        <li><a [routerLink]="['deposits']">{{"deposits" | translate}}</a></li>
+        <li><a [routerLink]="['business']">{{"business" | translate}}</a></li>
+        <li><a [routerLink]="['services']">{{"services" | translate}}</a></li>
+        <li><a [routerLink]="['about']">{{"about" | translate}}</a></li>
+        <li><a [routerLink]="['contacts']">{{"contacts" | translate}}</a></li>
       </ul>
     </div>
+
     <section class="rate-container">
-      <ul>
-        <li *ngFor="let item of currencyRates">{{item.buy | number: '1.2-2'}} - {{item.sale | number: '1.2-2'}}</li>
+      <ul class="rate-ul">
+        <li class="rate-li" *ngFor="let item of currencyRates">{{item.buy | number: '1.2-2'}} - {{item.sale | number: '1.2-2'}}</li>
       </ul>
     </section>
+
     <button class="auth">ABank24 WEB</button>
   </div>
 </header>
